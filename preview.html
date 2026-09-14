@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Royal Vault | Fine Jewelry, Luxury Timepieces & Collateral Loans</title>
+    <!-- Google Fonts for Luxury Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base: #08090d;
+            --bg-surface: #10121a;
+            --bg-card: rgba(22, 26, 38, 0.7);
+            --bg-card-hover: rgba(30, 36, 54, 0.9);
+            --gold-primary: #d4af37;
+            --gold-light: #f5e7a9;
+            --gold-dark: #aa8212;
+            --gold-glow: rgba(212, 175, 55, 0.25);
+            --cyan-accent: #00e5ff;
+            --emerald-accent: #10b981;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-glass: rgba(212, 175, 55, 0.2);
+            --border-subtle: rgba(255, 255, 255, 0.07);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --font-luxury: 'Cinzel', Georgia, serif;
+            --font-ui: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --shadow-card: 0 12px 35px -5px rgba(0, 0, 0, 0.6);
+            --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-ui);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(0, 229, 255, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 50% 90%, rgba(170, 130, 18, 0.06) 0%, transparent 50%);
+            min-height: 100vh;
+        }
+
+        /* Top Luxury Banner */
+        .top-notice {
+            background: linear-gradient(90deg, #090a0f, #1b1606, #090a0f);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 7px 20px;
+            text-align: center;
+            font-size: 0.82rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        .top-notice span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .top-notice .badge {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        /* Navigation Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 9, 13, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .brand-crest {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-primary), #634b0d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-gold);
+            border: 1px solid var(--gold-light);
+        }
+        .brand-text h1 {
+            font-family: var(--font-luxury);
+            font-size: 1.35rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .brand-text p {
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #0b0d11;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-size: 0.88rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid var(--gold-light);
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold-light);
+            border: 1px solid var(--border-glass);
+            padding: 9px 20px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: var(--gold-primary);
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 70px 0 50px;
+            text-align: center;
+            position: relative;
+        }
+        .hero-tagline {
+            display: inline-block;
+            font-family: var(--font-luxury);
+            font-size: 0.88rem;
+            letter-spacing: 3px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 6px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--border-glass);
+        }
+        .hero h2 {
+            font-family: var(--font-luxury);
+            font-size: 3.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 30%, #e2e8f0 70%, var(--gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p.lead {
+            font-size: 1.18rem;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 35px;
+            font-weight: 300;
+        }
+        .hero-stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .stat-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 16px 28px;
+            min-width: 190px;
+            backdrop-filter: blur(12px);
+            text-align: left;
+            transition: border-color 0.25s ease;
+        }
+        .stat-badge:hover {
+            border-color: var(--border-glass);
+        }
+        .stat-badge .val {
+            font-family: var(--font-luxury);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            display: block;
+        }
+        .stat-badge .label {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+        }
+
+        /* Section Titles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .section-header span {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold-primary);
+            font-family: var(--font-luxury);
+        }
+        .section-header h3 {
+            font-family: var(--font-luxury);
+            font-size: 2.2rem;
+            color: #ffffff;
+            margin-top: 6px;
+        }
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            max-width: 580px;
+            margin: 8px auto 0;
+        }
+
+        /* Interactive Collateral Loan Calculator */
+        .calculator-card {
+            background: linear-gradient(145deg, rgba(20, 24, 36, 0.95), rgba(12, 14, 22, 0.95));
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-card), var(--shadow-gold);
+            margin-bottom: 80px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        .calculator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        }
+
+        .calc-form .slider-group {
+            margin-bottom: 26px;
+        }
+        .calc-form .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .calc-form label {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .calc-form .slider-val {
+            font-family: var(--font-luxury);
+            color: var(--gold-light);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .calc-form input[type="range"] {
+            width: 100%;
+            height: 7px;
+            background: #252c42;
+            border-radius: 4px;
+            outline: none;
+            accent-color: var(--gold-primary);
+            cursor: pointer;
+        }
+        .term-selector {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+        .term-btn {
+            flex: 1;
+            padding: 10px;
+            background: #181d2d;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .term-btn.active, .term-btn:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-primary);
+            color: var(--gold-light);
+        }
+
+        .calc-result {
+            background: rgba(10, 12, 18, 0.8);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .calc-result h4 {
+            font-family: var(--font-luxury);
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 12px;
+        }
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .breakdown-row.highlight {
+            font-size: 1.25rem;
+            color: #ffffff;
+            font-weight: 700;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 14px;
+            margin-top: 16px;
+        }
+        .breakdown-row.highlight .amount {
+            color: var(--gold-primary);
+            font-family: var(--font-luxury);
+            font-size: 1.55rem;
+        }
+        .calc-action {
+            margin-top: 25px;
+        }
+
+        /* Showcase Inventory Section */
+        .inventory-section {
+            margin-bottom: 80px;
+        }
+        .inventory-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .cat-tab {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .cat-tab.active, .cat-tab:hover {
+            background: var(--gold-primary);
+            color: #0b0d11;
+            font-weight: 700;
+            border-color: var(--gold-light);
+        }
+        .search-box {
+            position: relative;
+            min-width: 260px;
+        }
+        .search-box input {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 10px 16px 10px 38px;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 0.88rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-box input:focus {
+            border-color: var(--gold-primary);
+        }
+        .search-box .icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Inventory Grid */
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+            gap: 25px;
+        }
+        .item-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+        }
+        .item-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-glass);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+        .item-media {
+            height: 180px;
+            background: radial-gradient(circle at center, #1f2538 0%, #10131d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.8rem;
+            position: relative;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .item-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(10, 12, 18, 0.85);
+            border: 1px solid var(--border-glass);
+            color: var(--gold-light);
+            font-size: 0.72rem;
+            padding: 3px 9px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .item-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .item-category {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .item-title {
+            font-family: var(--font-luxury);
+            font-size: 1.12rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+        .item-desc {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-subtle);
+            margin-bottom: 16px;
+        }
+        .item-price {
+            font-family: var(--font-luxury);
+            font-size: 1.45rem;
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+        .item-original {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        .btn-buy {
+            width: 100%;
+            background: #171c2b;
+            color: var(--gold-light);
+            border: 1px solid var(--border-glass);
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-buy:hover {
+            background: var(--gold-primary);
+            color: #0b0d11;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+        .btn-buy:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #12141c;
+            color: var(--text-muted);
+            border-color: var(--border-subtle);
+        }
+
+        /* Ticket Tracker & Redemption Tool */
+        .tracker-section {
+            background: linear-gradient(180deg, #10131d 0%, #090b10 100%);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 45px;
+            margin-bottom: 80px;
+        }
+        .tracker-input-row {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            gap: 12px;
+        }
+        .tracker-input-row input {
+            flex: 1;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-sm);
+            padding: 12px 18px;
+            font-size: 1rem;
+            color: #fff;
+            outline: none;
+            letter-spacing: 1px;
+            font-family: monospace;
+        }
+        .ticket-result-box {
+            max-width: 740px;
+            margin: 0 auto;
+            background: rgba(18, 22, 33, 0.9);
+            border: 1px dashed var(--gold-primary);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            display: none;
+            position: relative;
+            box-shadow: var(--shadow-card);
+        }
+        .ticket-badge-pill {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .badge-active { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+        .badge-redeemed { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+
+        /* Modal Overlays */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-card {
+            background: #111420;
+            border: 1px solid var(--gold-primary);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 580px;
+            padding: 35px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8), var(--shadow-gold);
+            position: relative;
+            animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .modal-close:hover { color: #fff; }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            background: #181d2c;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            color: #fff;
+            font-size: 0.92rem;
+            outline: none;
+            font-family: inherit;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold-primary);
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .toast {
+            background: #151927;
+            border: 1px solid var(--gold-primary);
+            border-left: 5px solid var(--gold-primary);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            animation: slideInRight 0.3s ease;
+            max-width: 380px;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 60px 0 30px;
+            background: #06070a;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand h4 {
+            font-family: var(--font-luxury);
+            font-size: 1.25rem;
+            color: var(--gold-light);
+            margin-bottom: 12px;
+        }
+        .footer-col h5 {
+            color: #ffffff;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: var(--gold-primary);
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 25px;
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 900px) {
+            .calculator-card { grid-template-columns: 1fr; }
+            .hero h2 { font-size: 2.3rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            header { padding: 14px 18px; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Security & Trust Banner -->
+    <div class="top-notice">
+        <span>🛡️ FDIC Insured High-Security Vault</span>
+        <span>•</span>
+        <span>💎 Certified GIA & Master Watchmaker Appraisals</span>
+        <span>•</span>
+        <span class="badge">Immediate Wire / Cash Payouts</span>
+    </div>
+
+    <!-- Main Navigation -->
+    <header>
+        <a href="#" class="brand">
+            <div class="brand-crest">⚜</div>
+            <div class="brand-text">
+                <h1>THE ROYAL VAULT</h1>
+                <p>Luxury Pawn & Collateral Loans</p>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="#calculator">Loan Calculator</a>
+            <a href="#inventory">Showcase Inventory</a>
+            <a href="#tracker">Track Ticket</a>
+            <a href="#security">Vault Security</a>
+        </nav>
+        <div style="display: flex; gap: 12px;">
+            <button class="btn-outline" onclick="openTrackerModal()">Check Ticket</button>
+            <button class="btn-gold" onclick="openPawnModal()">+ Pawn or Sell Asset</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="hero-tagline">Discreet • Confidential • Institutional Grade</span>
+            <h2>Immediate Liquidity Against Your Most Prized Assets</h2>
+            <p class="lead">
+                Borrow up to $500,000 against high-end timepieces, certified diamonds, fine art, gold bullion, and musical heirlooms without credit checks or personal liability.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <a href="#calculator" class="btn-gold">Calculate Loan Value</a>
+                <a href="#inventory" class="btn-outline">Browse Collection For Sale</a>
+            </div>
+
+            <div class="hero-stats-row">
+                <div class="stat-badge">
+                    <span class="val" id="stat-loans">$2.45M+</span>
+                    <span class="label">Funded Collateral</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="val" id="stat-items">8 Active</span>
+                    <span class="label">Showcase Rarities</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="val">3.0% - 3.8%</span>
+                    <span class="label">Low Monthly Rate</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="val">100%</span>
+                    <span class="label">Confidential & Secure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Loan Calculator Section -->
+        <section id="calculator">
+            <div class="section-header">
+                <span>Transparent Collateral Valuation</span>
+                <h3>Instant Collateral Loan Calculator</h3>
+                <p>Adjust your asset's appraised market value and desired term to see instant cash disbursement and total redemption amounts.</p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calc-form">
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Estimated Market Appraisal</label>
+                            <span class="slider-val" id="val-appraisal-disp">$15,000</span>
+                        </div>
+                        <input type="range" id="slider-appraisal" min="1000" max="80000" step="500" value="15000" oninput="updateCalculator()">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Loan-to-Value (LTV Ratio)</label>
+                            <span class="slider-val" id="val-ltv-disp">65%</span>
+                        </div>
+                        <input type="range" id="slider-ltv" min="30" max="70" step="5" value="65" oninput="updateCalculator()">
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Collateral Holding Term</label>
+                            <span class="slider-val" id="val-term-disp">90 Days</span>
+                        </div>
+                        <div class="term-selector">
+                            <button type="button" class="term-btn" onclick="setTerm(30)">30 Days</button>
+                            <button type="button" class="term-btn" onclick="setTerm(60)">60 Days</button>
+                            <button type="button" class="term-btn active" onclick="setTerm(90)">90 Days</button>
+                            <button type="button" class="term-btn" onclick="setTerm(120)">120 Days</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-result">
+                    <div>
+                        <h4>Loan Disbursement Estimate</h4>
+                        <div class="breakdown-row">
+                            <span>Appraised Collateral:</span>
+                            <strong id="res-appraisal">$15,000.00</strong>
+                        </div>
+                        <div class="breakdown-row">
+                            <span>Immediate Cash Payout:</span>
+                            <strong id="res-payout" style="color: var(--gold-light); font-size: 1.15rem;">$9,750.00</strong>
+                        </div>
+                        <div class="breakdown-row">
+                            <span>Monthly Interest (3.5%):</span>
+                            <strong id="res-monthly">$341.25 / mo</strong>
+                        </div>
+                        <div class="breakdown-row">
+                            <span>Holding Period:</span>
+                            <strong id="res-days">90 Days (3 Months)</strong>
+                        </div>
+                        <div class="breakdown-row highlight">
+                            <span>Total Payoff to Redeem:</span>
+                            <span class="amount" id="res-redemption">$10,773.75</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-action">
+                        <button class="btn-gold" style="width: 100%;" onclick="openPawnWithCalculator()">Pawn This Asset Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase Inventory Section -->
+        <section id="inventory" class="inventory-section">
+            <div class="section-header">
+                <span>The Vault Collection</span>
+                <h3>Featured Luxury Inventory For Sale</h3>
+                <p>Authenticity guaranteed. Every timepiece, piece of fine jewelry, and rarity is inspected, certified, and serviced by master craftsmen.</p>
+            </div>
+
+            <div class="inventory-toolbar">
+                <div class="category-tabs">
+                    <button class="cat-tab active" onclick="filterCategory('All')">All Items</button>
+                    <button class="cat-tab" onclick="filterCategory('Luxury Watches')">Timepieces</button>
+                    <button class="cat-tab" onclick="filterCategory('Fine Jewelry')">Jewelry</button>
+                    <button class="cat-tab" onclick="filterCategory('Musical Instruments')">Instruments</button>
+                    <button class="cat-tab" onclick="filterCategory('High-End Tech')">Tech & Optics</button>
+                    <button class="cat-tab" onclick="filterCategory('Gold & Bullion')">Bullion</button>
+                </div>
+
+                <div class="search-box">
+                    <span class="icon">🔍</span>
+                    <input type="text" id="inventory-search" placeholder="Search Rolex, Gibson, Diamonds..." onkeyup="filterInventory()">
+                </div>
+            </div>
+
+            <div class="inventory-grid" id="inventory-container">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </section>
+
+        <!-- Ticket Tracking & Online Redemption Tool -->
+        <section id="tracker" class="tracker-section">
+            <div class="section-header">
+                <span>Client Vault Portal</span>
+                <h3>Pawn Ticket Tracker & Instant Redemption</h3>
+                <p>Lookup your collateral pawn ticket to view accrued balance, maturity date, and pay online to release your asset.</p>
+            </div>
+
+            <div class="tracker-input-row">
+                <input type="text" id="ticket-search-id" placeholder="Enter Ticket # (e.g. TKT-1001)" value="TKT-1001">
+                <button class="btn-gold" onclick="searchTicket()">Look Up Ticket</button>
+            </div>
+
+            <div class="ticket-result-box" id="ticket-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                    <div>
+                        <span class="ticket-badge-pill" id="ticket-status-badge">ACTIVE</span>
+                        <h4 style="font-family: var(--font-luxury); font-size: 1.5rem; color: #fff;" id="ticket-item-title">Item Title</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85rem;" id="ticket-client-meta">Client: Name • Phone: ...</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <span style="font-size: 0.78rem; color: var(--gold-primary); text-transform: uppercase; letter-spacing: 1px;">Ticket ID</span>
+                        <h3 style="font-family: monospace; color: var(--gold-light); font-size: 1.6rem;" id="ticket-id-display">TKT-1001</h3>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 24px;">
+                    <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: var(--radius-sm);">
+                        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Principal Borrowed</span>
+                        <div style="font-size: 1.3rem; color: #fff; font-family: var(--font-luxury);" id="ticket-principal">$0.00</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: var(--radius-sm);">
+                        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Due Date</span>
+                        <div style="font-size: 1.15rem; color: var(--gold-light);" id="ticket-due-date">Date</div>
+                    </div>
+                    <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: var(--radius-sm);">
+                        <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Payoff / Redemption</span>
+                        <div style="font-size: 1.3rem; color: var(--gold-primary); font-family: var(--font-luxury); font-weight: 700;" id="ticket-total">$0.00</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 14px;" id="ticket-actions">
+                    <button class="btn-outline" onclick="printTicketReceipt()">Print Vault Receipt</button>
+                    <button class="btn-gold" id="btn-redeem-action" onclick="redeemActiveTicket()">Pay & Redeem Collateral</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal: Pawn / Sell Asset -->
+    <div class="modal-overlay" id="modal-pawn">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModals()">&times;</button>
+            <h3 style="font-family: var(--font-luxury); color: var(--gold-light); font-size: 1.5rem; margin-bottom: 6px;">Pawn Your Asset</h3>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 22px;">Submit collateral details for institutional appraisal & immediate loan disbursement.</p>
+
+            <form id="pawn-form" onsubmit="submitPawnForm(event)">
+                <div class="form-group">
+                    <label>Your Full Name *</label>
+                    <input type="text" id="pawn-name" placeholder="e.g. Julian Sterling" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone / Contact *</label>
+                    <input type="tel" id="pawn-phone" placeholder="e.g. (555) 019-2834" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-group">
+                        <label>Asset Category *</label>
+                        <select id="pawn-category">
+                            <option>Luxury Watches</option>
+                            <option>Fine Jewelry</option>
+                            <option>Musical Instruments</option>
+                            <option>High-End Tech</option>
+                            <option>Gold & Bullion</option>
+                            <option>Rare Collectibles</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Holding Period *</label>
+                        <select id="pawn-term">
+                            <option value="30">30 Days</option>
+                            <option value="60">60 Days</option>
+                            <option value="90" selected>90 Days</option>
+                            <option value="120">120 Days</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Asset Description & Model *</label>
+                    <input type="text" id="pawn-item" placeholder="e.g. Rolex GMT-Master II 126710BLRO Pepsi" required>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-group">
+                        <label>Estimated Market Value ($) *</label>
+                        <input type="number" id="pawn-appraisal" min="100" max="500000" value="10000" required onchange="syncPawnLoanAmount()">
+                    </div>
+                    <div class="form-group">
+                        <label>Requested Loan Amount ($) *</label>
+                        <input type="number" id="pawn-loan" min="100" max="350000" value="6500" required>
+                    </div>
+                </div>
+
+                <div style="margin-top: 15px;">
+                    <button type="submit" class="btn-gold" style="width: 100%; padding: 12px;">Generate Official Pawn Ticket</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toast-box"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h4>THE ROYAL VAULT</h4>
+                <p>Premier licensed collateral lending institution & luxury asset broker. Regulated by state financial authorities with Grade-V safe deposit protection.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Collateral Loans</h5>
+                <ul>
+                    <li><a href="#calculator">Loan Calculator</a></li>
+                    <li><a href="#tracker">Ticket Redemption</a></li>
+                    <li><a href="#" onclick="openPawnModal(); return false;">Pawn Luxury Watches</a></li>
+                    <li><a href="#" onclick="openPawnModal(); return false;">Gold & Bullion Loans</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Showcase</h5>
+                <ul>
+                    <li><a href="#inventory">Certified Watches</a></li>
+                    <li><a href="#inventory">GIA Certified Diamonds</a></li>
+                    <li><a href="#inventory">Vintage Instruments</a></li>
+                    <li><a href="#inventory">Optics & Cinema</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Operating Hours</h5>
+                <p style="margin-bottom: 8px;">Mon – Fri: 9:30 AM – 7:00 PM</p>
+                <p style="margin-bottom: 8px;">Saturday: 10:00 AM – 5:00 PM</p>
+                <p style="color: var(--gold-light);">Private VIP Vault Visits by Appointment</p>
+            </div>
+        </div>
+        <div class="container copyright">
+            &copy; 2026 The Royal Vault Pawn & Luxury Loans. All rights reserved. Powered by High-Performance C++ Server Engine.
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic with Seamless Dual Mode (Live C++ API or Standalone Fallback) -->
+    <script>
+        let currentTerm = 90;
+        let activeCategory = 'All';
+
+        // Local fallback data store (used if previewed directly without C++ server running)
+        let inventoryData = [
+            {
+                id: 101,
+                title: "Rolex Submariner Date 41mm (Ref: 126610LN)",
+                category: "Luxury Watches",
+                description: "Black Cerachrom ceramic bezel, Oystersteel case, caliber 3235 automatic movement. Full box and original papers included.",
+                condition: "Mint / Pre-Owned",
+                estimatedValue: 14500,
+                retailPrice: 13200,
+                icon: "⌚",
+                serialNumber: "RX-98234-A",
+                isAvailable: true
+            },
+            {
+                id: 102,
+                title: "1968 Gibson Les Paul Custom 'Black Beauty'",
+                category: "Musical Instruments",
+                description: "Original vintage ebony finish with authentic golden hardware, mother-of-pearl block inlays, original PAF humbuckers.",
+                condition: "Vintage Excellent",
+                estimatedValue: 9500,
+                retailPrice: 8400,
+                icon: "🎸",
+                serialNumber: "GLP-1968-04",
+                isAvailable: true
+            },
+            {
+                id: 103,
+                title: "3.20 Carat Platinum Diamond Solitaire Ring",
+                category: "Fine Jewelry",
+                description: "Brilliant round cut diamond, VVS1 clarity, E color grade, GIA certified with laser inscription. Platinum 950 band.",
+                condition: "Pristine",
+                estimatedValue: 18500,
+                retailPrice: 16900,
+                icon: "💎",
+                serialNumber: "GIA-6428190",
+                isAvailable: true
+            },
+            {
+                id: 104,
+                title: "Leica M11 Rangefinder + Summicron-M 35mm f/2",
+                category: "High-End Tech",
+                description: "60MP BSI CMOS full-frame sensor, matte black finish, paired with legendary German Leica 35mm ASPH glass.",
+                condition: "Mint in Box",
+                estimatedValue: 8200,
+                retailPrice: 7250,
+                icon: "📷",
+                serialNumber: "LCA-55102-M",
+                isAvailable: true
+            },
+            {
+                id: 105,
+                title: "100g 999.9 Fine Gold Minted Bar (Valcambi Suisse)",
+                category: "Gold & Bullion",
+                description: "Pure investment-grade investment gold bullion with official assay certificate and serial security seal.",
+                condition: "Uncirculated",
+                estimatedValue: 9200,
+                retailPrice: 8850,
+                icon: "🏆",
+                serialNumber: "VAL-AU-7741",
+                isAvailable: true
+            },
+            {
+                id: 106,
+                title: "Patek Philippe Calatrava 18k Rose Gold 5196R",
+                category: "Luxury Watches",
+                description: "Timeless luxury dress watch with manual-wind caliber 215 PS, silvery opaline dial, alligator leather strap.",
+                condition: "Exceptional",
+                estimatedValue: 25000,
+                retailPrice: 22900,
+                icon: "👑",
+                serialNumber: "PP-5196R-12",
+                isAvailable: true
+            },
+            {
+                id: 107,
+                title: "Sony FX3 Full-Frame Cinema Camera Kit",
+                category: "High-End Tech",
+                description: "Cinema Line 4K 120p video camera with XLR top handle unit, 2x 160GB CFexpress cards, and cage rig.",
+                condition: "Like New",
+                estimatedValue: 4200,
+                retailPrice: 3400,
+                icon: "🎥",
+                serialNumber: "SNY-FX3-882",
+                isAvailable: true
+            },
+            {
+                id: 108,
+                title: "Cartier Love Bracelet (18k Solid Yellow Gold)",
+                category: "Fine Jewelry",
+                description: "Iconic oval motif, size 17, includes original Cartier ergonomic screwdriver, red jewel case, and provenance card.",
+                condition: "Polished / Excellent",
+                estimatedValue: 7500,
+                retailPrice: 6400,
+                icon: "✨",
+                serialNumber: "CRT-LV-9014",
+                isAvailable: true
+            }
+        ];
+
+        let localTickets = {
+            "TKT-1001": {
+                ticketId: "TKT-1001",
+                customerName: "Alexander Wright",
+                customerPhone: "(555) 234-8901",
+                itemName: "Audemars Piguet Royal Oak Offshore 42mm",
+                category: "Luxury Watches",
+                appraisedValue: 28000.0,
+                loanPrincipal: 16000.0,
+                termDays: 90,
+                totalRedemption: 17680.0,
+                issueDate: "Aug 15, 2026",
+                dueDate: "Nov 15, 2026",
+                status: "ACTIVE"
+            },
+            "TKT-1002": {
+                ticketId: "TKT-1002",
+                customerName: "Eleanor Vance",
+                customerPhone: "(555) 871-4432",
+                itemName: "18k White Gold Emerald & Diamond Necklace",
+                category: "Fine Jewelry",
+                appraisedValue: 12000.0,
+                loanPrincipal: 7200.0,
+                termDays: 60,
+                totalRedemption: 7776.0,
+                issueDate: "Aug 30, 2026",
+                dueDate: "Oct 30, 2026",
+                status: "ACTIVE"
+            }
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCalculator();
+            loadInventory();
+            searchTicket();
+        });
+
+        function showToast(message, isError = false) {
+            const container = document.getElementById('toast-box');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            if (isError) {
+                toast.style.borderColor = '#ef4444';
+                toast.style.borderLeftColor = '#ef4444';
+            }
+            toast.innerText = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.4s ease';
+                setTimeout(() => toast.remove(), 400);
+            }, 4500);
+        }
+
+        function setTerm(days) {
+            currentTerm = days;
+            document.querySelectorAll('.term-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText.includes(days + ' Days'));
+            });
+            updateCalculator();
+        }
+
+        function updateCalculator() {
+            const appraisal = parseFloat(document.getElementById('slider-appraisal').value);
+            const ltv = parseFloat(document.getElementById('slider-ltv').value) / 100.0;
+            
+            document.getElementById('val-appraisal-disp').innerText = '$' + appraisal.toLocaleString();
+            document.getElementById('val-ltv-disp').innerText = (ltv * 100).toFixed(0) + '%';
+            document.getElementById('val-term-disp').innerText = currentTerm + ' Days';
+
+            const payout = appraisal * ltv;
+            const monthlyRate = (payout > 10000) ? 0.030 : 0.035;
+            const months = currentTerm / 30.0;
+            const monthlyInterest = payout * monthlyRate;
+            const totalInterest = monthlyInterest * months;
+            const totalRedemption = payout + totalInterest;
+
+            document.getElementById('res-appraisal').innerText = '$' + appraisal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('res-payout').innerText = '$' + payout.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('res-monthly').innerText = '$' + monthlyInterest.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' / mo';
+            document.getElementById('res-days').innerText = currentTerm + ' Days (' + months.toFixed(1) + ' Mo)';
+            document.getElementById('res-redemption').innerText = '$' + totalRedemption.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        function openPawnWithCalculator() {
+            const appraisal = document.getElementById('slider-appraisal').value;
+            const ltv = parseFloat(document.getElementById('slider-ltv').value) / 100.0;
+            const payout = Math.round(appraisal * ltv);
+            document.getElementById('pawn-appraisal').value = appraisal;
+            document.getElementById('pawn-loan').value = payout;
+            document.getElementById('pawn-term').value = currentTerm;
+            openPawnModal();
+        }
+
+        function syncPawnLoanAmount() {
+            const app = parseFloat(document.getElementById('pawn-appraisal').value) || 0;
+            document.getElementById('pawn-loan').value = Math.round(app * 0.65);
+        }
+
+        async function loadInventory() {
+            try {
+                const response = await fetch('/api/inventory');
+                if (response.ok) {
+                    inventoryData = await response.json();
+                }
+            } catch (err) {
+                // Standalone file preview mode
+            }
+            renderInventory();
+        }
+
+        function renderInventory() {
+            const container = document.getElementById('inventory-container');
+            container.innerHTML = '';
+
+            const searchTerm = document.getElementById('inventory-search').value.toLowerCase();
+            const filtered = inventoryData.filter(item => {
+                const matchesCat = (activeCategory === 'All' || item.category === activeCategory);
+                const matchesQuery = item.title.toLowerCase().includes(searchTerm) || 
+                                     item.description.toLowerCase().includes(searchTerm);
+                return matchesCat && matchesQuery;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No luxury items match your criteria in our current showcase.</div>';
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'item-card';
+                card.innerHTML = `
+                    <div class="item-media">
+                        <span>${item.icon}</span>
+                        <span class="item-badge">${item.condition}</span>
+                    </div>
+                    <div class="item-content">
+                        <span class="item-category">${item.category}</span>
+                        <h4 class="item-title">${item.title}</h4>
+                        <p class="item-desc">${item.description}</p>
+                        <div class="item-meta">
+                            <div>
+                                <span class="item-original">Est. $${item.estimatedValue.toLocaleString()}</span>
+                                <div class="item-price">$${item.retailPrice.toLocaleString()}</div>
+                            </div>
+                            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: monospace;">${item.serialNumber}</span>
+                        </div>
+                        <button class="btn-buy" ${!item.isAvailable ? 'disabled' : ''} onclick="buyShowcaseItem(${item.id})">
+                            ${item.isAvailable ? 'Acquire Asset' : 'Sold to Collector'}
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.cat-tab').forEach(t => {
+                t.classList.toggle('active', t.innerText === (cat === 'Luxury Watches' ? 'Timepieces' : cat === 'Musical Instruments' ? 'Instruments' : cat === 'High-End Tech' ? 'Tech & Optics' : cat === 'Gold & Bullion' ? 'Bullion' : cat === 'Fine Jewelry' ? 'Jewelry' : 'All Items'));
+            });
+            renderInventory();
+        }
+
+        function filterInventory() {
+            renderInventory();
+        }
+
+        async function buyShowcaseItem(itemId) {
+            if (!confirm('Would you like to purchase and secure this luxury asset from The Royal Vault?')) return;
+            try {
+                const resp = await fetch('/api/buy', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id: itemId })
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    showToast(res.message);
+                    loadInventory();
+                    return;
+                }
+            } catch (e) {}
+
+            // Local fallback
+            const item = inventoryData.find(i => i.id === itemId);
+            if (item && item.isAvailable) {
+                item.isAvailable = false;
+                showToast(`Congratulations! Purchase confirmed for ${item.title}.`);
+                renderInventory();
+            }
+        }
+
+        async function submitPawnForm(e) {
+            e.preventDefault();
+            const payload = {
+                customerName: document.getElementById('pawn-name').value,
+                customerPhone: document.getElementById('pawn-phone').value,
+                category: document.getElementById('pawn-category').value,
+                termDays: parseInt(document.getElementById('pawn-term').value),
+                itemName: document.getElementById('pawn-item').value,
+                appraisedValue: parseFloat(document.getElementById('pawn-appraisal').value),
+                loanAmount: parseFloat(document.getElementById('pawn-loan').value)
+            };
+
+            try {
+                const resp = await fetch('/api/pawn', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    closeModals();
+                    showToast(`Loan Approved! Ticket #${res.ticketId} issued.`);
+                    document.getElementById('ticket-search-id').value = res.ticketId;
+                    searchTicket();
+                    return;
+                }
+            } catch (err) {}
+
+            // Fallback
+            const tid = 'TKT-' + Math.floor(1000 + Math.random() * 9000);
+            localTickets[tid] = {
+                ticketId: tid,
+                customerName: payload.customerName,
+                customerPhone: payload.customerPhone,
+                itemName: payload.itemName,
+                category: payload.category,
+                appraisedValue: payload.appraisedValue,
+                loanPrincipal: payload.loanAmount,
+                termDays: payload.termDays,
+                totalRedemption: payload.loanAmount * 1.10,
+                issueDate: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                dueDate: new Date(Date.now() + payload.termDays*24*60*60*1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                status: "ACTIVE"
+            };
+            closeModals();
+            showToast(`Loan Approved! Ticket #${tid} generated.`);
+            document.getElementById('ticket-search-id').value = tid;
+            searchTicket();
+        }
+
+        async function searchTicket() {
+            const ticketId = document.getElementById('ticket-search-id').value.trim();
+            if (!ticketId) return;
+
+            let ticket = null;
+            try {
+                const resp = await fetch(`/api/ticket?id=${encodeURIComponent(ticketId)}`);
+                ticket = await resp.json();
+                if (ticket.error) ticket = null;
+            } catch (err) {}
+
+            if (!ticket && localTickets[ticketId]) {
+                ticket = localTickets[ticketId];
+            }
+
+            if (!ticket) {
+                showToast('Ticket not found. Please verify your Ticket ID (e.g. TKT-1001).', true);
+                document.getElementById('ticket-card').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('ticket-card').style.display = 'block';
+            document.getElementById('ticket-id-display').innerText = ticket.ticketId;
+            document.getElementById('ticket-item-title').innerText = ticket.itemName + ' (' + ticket.category + ')';
+            document.getElementById('ticket-client-meta').innerText = `Beneficiary: ${ticket.customerName} • Contact: ${ticket.customerPhone} • Issued: ${ticket.issueDate}`;
+            document.getElementById('ticket-principal').innerText = '$' + ticket.loanPrincipal.toLocaleString(undefined, {minimumFractionDigits: 2});
+            document.getElementById('ticket-due-date').innerText = ticket.dueDate;
+            document.getElementById('ticket-total').innerText = '$' + ticket.totalRedemption.toLocaleString(undefined, {minimumFractionDigits: 2});
+
+            const badge = document.getElementById('ticket-status-badge');
+            const redeemBtn = document.getElementById('btn-redeem-action');
+
+            if (ticket.status === 'ACTIVE') {
+                badge.className = 'ticket-badge-pill badge-active';
+                badge.innerText = 'ACTIVE COLLATERAL';
+                redeemBtn.disabled = false;
+                redeemBtn.innerText = 'Pay & Redeem Collateral';
+            } else {
+                badge.className = 'ticket-badge-pill badge-redeemed';
+                badge.innerText = 'REDEEMED & RELEASED';
+                redeemBtn.disabled = true;
+                redeemBtn.innerText = 'Asset Already Released';
+            }
+        }
+
+        async function redeemActiveTicket() {
+            const ticketId = document.getElementById('ticket-id-display').innerText;
+            if (!confirm(`Confirm full repayment to redeem collateral under ${ticketId}?`)) return;
+
+            try {
+                const resp = await fetch('/api/redeem', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ticketId: ticketId })
+                });
+                const res = await resp.json();
+                if (res.success) {
+                    showToast(res.message);
+                    searchTicket();
+                    return;
+                }
+            } catch (e) {}
+
+            if (localTickets[ticketId]) {
+                localTickets[ticketId].status = "REDEEMED";
+                showToast(`Payment confirmed. Asset is released from The Royal Vault.`);
+                searchTicket();
+            }
+        }
+
+        function printTicketReceipt() {
+            window.print();
+        }
+
+        function openPawnModal() {
+            document.getElementById('modal-pawn').style.display = 'flex';
+        }
+        function openTrackerModal() {
+            document.getElementById('tracker').scrollIntoView({ behavior: 'smooth' });
+        }
+        function closeModals() {
+            document.querySelectorAll('.modal-overlay').forEach(m => m.style.display = 'none');
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                closeModals();
+            }
+        };
+    </script>
+</body>
+</html>
